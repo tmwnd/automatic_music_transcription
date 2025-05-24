@@ -261,10 +261,26 @@ def train(spec, resume_iteration, train_on, pretrained_model_path, freeze_all_la
         # print(f'ep = {ep}, lr = {scheduler.get_lr()}')
         for batch in loader:
             optimizer.zero_grad()
-            predictions, losses, _ = model.run_on_batch(batch, batch_description=str(ep), batch_identifier=batch_idx)
-            loss = sum(losses.values())
-            total_loss += loss.item()
-            loss.backward()
+
+            try:
+                predictions, losses, _ = model.run_on_batch(batch, batch_description=str(ep), batch_identifier=batch_idx)
+                loss = sum(losses.values())
+                total_loss += loss.item()
+                loss.backward()
+            except Exception as e:
+                print(f"Error in batch {batch_idx} at epoch {ep}: {e}")
+                # save batch and gradients
+                torch.save({
+                    'model_state_dict': model.state_dict(),
+                    'optimizer_state_dict': optimizer.state_dict(),
+                    'scheduler_state_dict': scheduler.state_dict(),
+                    'batch': batch,
+                    'epoch': ep,
+                    'batch_idx': batch_idx
+                }, f'/error_snapshot_ep{ep}_batch{batch_idx}.pt')
+
+                raise e
+
             nn.utils.clip_grad_value_(model.parameters(), clip_value=0.1)
             if model.internal_debug_mode:
                 save_batch(batch, logdir, ep, batch_idx)

@@ -12,9 +12,10 @@ from .midi import parse_midi
 from .dataset_utils import *
 import librosa
 
+from sklearn.model_selection import train_test_split
 
 class PianoRollAudioDataset(Dataset):
-    def __init__(self, path, dataset_root_dir=".", groups=None, sequence_length=None, seed=42, refresh=False, device='cpu'):
+    def __init__(self, path, dataset_root_dir=".", groups=None, sequence_length=None, seed=42, refresh=False, device='cpu', train_size=1):
         self.path = os.path.join(dataset_root_dir, path)
         self.groups = groups if groups is not None else self.available_groups()
         self.sequence_length = sequence_length
@@ -26,8 +27,13 @@ class PianoRollAudioDataset(Dataset):
         print(f"Loading {len(groups)} group{'s' if len(groups) > 1 else ''} "
               f"of {self.__class__.__name__} at {self.path}")
         for group in groups:
+            files = self.files(group)
+
+            if group == "train" and train_size != 1:
+                files, _ = train_test_split(files, train_size=train_size, random_state=seed)
+
             # self.files is defined in MAPS class
-            for input_files in tqdm(self.files(group), desc='Loading group %s' % group):
+            for input_files in tqdm(files, desc='Loading group %s' % group):
                 # self.load is a function defined below. It first loads all data into memory first
                 self.data.append(self.load(*input_files))
 
@@ -183,9 +189,9 @@ class PianoRollAudioDataset(Dataset):
 
 class MAESTRO(PianoRollAudioDataset):
 
-    def __init__(self, dataset_root_dir=".", path='MAESTRO/', groups=None, sequence_length=None, seed=42, refresh=False, device='cpu'):
+    def __init__(self, dataset_root_dir=".", path='MAESTRO/', groups=None, sequence_length=None, seed=42, refresh=False, device='cpu', train_size=1):
         super().__init__(path, dataset_root_dir, groups if groups is not None else [
-            'train'], sequence_length, seed, refresh, device)
+            'train'], sequence_length, seed, refresh, device, train_size)
 
     @classmethod
     def available_groups(cls):
@@ -225,9 +231,9 @@ class MAESTRO(PianoRollAudioDataset):
 
 class GuitarSet(PianoRollAudioDataset):
 
-    def __init__(self, dataset_root_dir=".", path='data/guitarset', groups=None, sequence_length=None, seed=42, refresh=False, device='cpu'):
+    def __init__(self, dataset_root_dir=".", path='data/guitarset', groups=None, sequence_length=None, seed=42, refresh=False, device='cpu', train_size=1):
         super().__init__(path, dataset_root_dir, groups if groups is not None else [
-            'all'], sequence_length, seed, refresh, device)
+            'all'], sequence_length, seed, refresh, device, train_size)
 
     @classmethod
     def available_groups(cls):
@@ -258,9 +264,9 @@ class GuitarSet(PianoRollAudioDataset):
 
 class SynthesizedTrumpet(PianoRollAudioDataset):
 
-    def __init__(self, dataset_root_dir=".", path='data/synthesize_trumpet', groups=None, sequence_length=None, seed=42, refresh=False, device='cpu'):
+    def __init__(self, dataset_root_dir=".", path='data/synthesize_trumpet', groups=None, sequence_length=None, seed=42, refresh=False, device='cpu', train_size=1):
         super().__init__(path, dataset_root_dir, groups if groups is not None else [
-            'all'], sequence_length, seed, refresh, device)
+            'all'], sequence_length, seed, refresh, device, train_size)
 
     @classmethod
     def available_groups(cls):
@@ -290,9 +296,9 @@ class SynthesizedTrumpet(PianoRollAudioDataset):
 
 class SynthesizedInstruments(PianoRollAudioDataset):
 
-    def __init__(self, dataset_root_dir=".",  path='data/synthesize', groups=None, sequence_length=None, seed=42, refresh=False, device='cpu'):
+    def __init__(self, dataset_root_dir=".",  path='data/synthesize', groups=None, sequence_length=None, seed=42, refresh=False, device='cpu', train_size=1):
         super().__init__(path, dataset_root_dir, groups if groups is not None else [
-            'all'], sequence_length, seed, refresh, device)
+            'all'], sequence_length, seed, refresh, device, train_size)
 
     @classmethod
     def available_groups(cls):
@@ -326,11 +332,11 @@ class SynthesizedInstruments(PianoRollAudioDataset):
 
 
 class MAPS(PianoRollAudioDataset):
-    def __init__(self, dataset_root_dir=".",  path='data/MAPS', groups=None, sequence_length=None, overlap=True, seed=42, refresh=False, device='cpu'):
+    def __init__(self, dataset_root_dir=".",  path='data/MAPS', groups=None, sequence_length=None, overlap=True, seed=42, refresh=False, device='cpu', train_size=1):
         self.overlap = overlap
         print("Initializing MAPS dataset!")
         super().__init__(path, dataset_root_dir, groups if groups is not None else [
-            'ENSTDkAm', 'ENSTDkCl'], sequence_length, seed, refresh, device)
+            'ENSTDkAm', 'ENSTDkCl'], sequence_length, seed, refresh, device, train_size)
 
     @classmethod
     def available_groups(cls):
@@ -359,11 +365,11 @@ class MAPS(PianoRollAudioDataset):
 
 
 class OriginalMAPS(PianoRollAudioDataset):
-    def __init__(self, dataset_root_dir=".",  path='MAPS', groups=None, sequence_length=None, overlap=True, seed=42, refresh=False, device='cpu'):
+    def __init__(self, dataset_root_dir=".",  path='MAPS', groups=None, sequence_length=None, overlap=True, seed=42, refresh=False, device='cpu', train_size=1):
         self.overlap = overlap
         print(f"Initializing original MAPS dataset with {groups}!")
         super().__init__(path, dataset_root_dir, groups if groups is not None else [
-            'ENSTDkAm', 'ENSTDkCl'], sequence_length, seed, refresh, device)
+            'ENSTDkAm', 'ENSTDkCl'], sequence_length, seed, refresh, device, train_size)
 
     @classmethod
     def available_groups(cls):
@@ -404,7 +410,7 @@ class OriginalMAPS(PianoRollAudioDataset):
         return result
 
 class CustomBatchDataset(Dataset):
-    def __init__(self, dataset_root_dir=".", path='batch/', groups=None, sequence_length=None, seed=42, refresh=False, device='cpu'):
+    def __init__(self, dataset_root_dir=".", path='batch/', groups=None, sequence_length=None, seed=42, refresh=False, device='cpu', train_size=1):
         print(f"Loading {len(groups)} group{'s' if len(groups) > 1 else ''} "
               f"of {self.__class__.__name__} at {path}")
         self.device = device
@@ -439,9 +445,9 @@ class CustomBatchDataset(Dataset):
         return len(self.data)
 
 class MusicNet(PianoRollAudioDataset):
-    def __init__(self, dataset_root_dir=".", path='MusicNet/', groups=None, sequence_length=None, seed=42, refresh=False, device='cpu'):
+    def __init__(self, dataset_root_dir=".", path='MusicNet/', groups=None, sequence_length=None, seed=42, refresh=False, device='cpu', train_size=1):
         super().__init__(path, dataset_root_dir, groups if groups is not None else [
-            'train'], sequence_length, seed, refresh, device)
+            'train'], sequence_length, seed, refresh, device, train_size)
 
     @classmethod
     def available_groups(cls):
