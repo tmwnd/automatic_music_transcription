@@ -277,7 +277,7 @@ def train(spec, resume_iteration, train_on, pretrained_model_path, freeze_all_la
                     'batch': batch,
                     'epoch': ep,
                     'batch_idx': batch_idx
-                }, f'/error_snapshot_ep{ep}_batch{batch_idx}.pt')
+                }, f'error_snapshot_ep{ep}_batch{batch_idx}.pt')
 
                 raise e
 

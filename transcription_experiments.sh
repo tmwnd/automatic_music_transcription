@@ -44,15 +44,15 @@ python train.py with train_on=GuitarSet logdir=results/transferred_from_MAPS_une
 
 # python result_table_generator.py results/unet_model_trained_on_MAPS results/unet_model_trained_on_GuitarSet results/unet_model_trained_on_SynthesizedInstruments  results/transferred_unet_model_trained_on_MAPS results/transferred_unet_model_trained_on_GuitarSet results/transferred_from_guitarset_unet_model_trained_on_MAPS results/transferred_from_MAPS_unet_model_trained_on_GuitarSet > results/table.txt
 
-python train.py with train_on=MAPS logdir=results/unet_model_trained_on_MAPS_.1 model_type=unet epoches=$epoches seed=$seed train_size=.1
-python train.py with train_on=MAPS logdir=results/unet_model_trained_on_MAPS_.2 model_type=unet epoches=$epoches seed=$seed train_size=.2
-python train.py with train_on=MAPS logdir=results/unet_model_trained_on_MAPS_.3 model_type=unet epoches=$epoches seed=$seed train_size=.3
-python train.py with train_on=MAPS logdir=results/unet_model_trained_on_MAPS_.4 model_type=unet epoches=$epoches seed=$seed train_size=.4
-python train.py with train_on=MAPS logdir=results/unet_model_trained_on_MAPS_.5 model_type=unet epoches=$epoches seed=$seed train_size=.5
-python train.py with train_on=MAPS logdir=results/unet_model_trained_on_MAPS_.6 model_type=unet epoches=$epoches seed=$seed train_size=.6
-python train.py with train_on=MAPS logdir=results/unet_model_trained_on_MAPS_.7 model_type=unet epoches=$epoches seed=$seed train_size=.7
-python train.py with train_on=MAPS logdir=results/unet_model_trained_on_MAPS_.8 model_type=unet epoches=$epoches seed=$seed train_size=.8
-python train.py with train_on=MAPS logdir=results/unet_model_trained_on_MAPS_.9 model_type=unet epoches=$epoches seed=$seed train_size=.9
+python train_reduced.py with train_on=MAPS logdir=results/unet_model_trained_on_MAPS_.1 model_type=unet epoches=$epoches seed=$seed train_size=.1
+python train_reduced.py with train_on=MAPS logdir=results/unet_model_trained_on_MAPS_.2 model_type=unet epoches=$epoches seed=$seed train_size=.2
+python train_reduced.py with train_on=MAPS logdir=results/unet_model_trained_on_MAPS_.3 model_type=unet epoches=$epoches seed=$seed train_size=.3
+python train_reduced.py with train_on=MAPS logdir=results/unet_model_trained_on_MAPS_.4 model_type=unet epoches=$epoches seed=$seed train_size=.4
+python train_reduced.py with train_on=MAPS logdir=results/unet_model_trained_on_MAPS_.5 model_type=unet epoches=$epoches seed=$seed train_size=.5
+python train_reduced.py with train_on=MAPS logdir=results/unet_model_trained_on_MAPS_.6 model_type=unet epoches=$epoches seed=$seed train_size=.6
+python train_reduced.py with train_on=MAPS logdir=results/unet_model_trained_on_MAPS_.7 model_type=unet epoches=$epoches seed=$seed train_size=.7
+python train_reduced.py with train_on=MAPS logdir=results/unet_model_trained_on_MAPS_.8 model_type=unet epoches=$epoches seed=$seed train_size=.8
+python train_reduced.py with train_on=MAPS logdir=results/unet_model_trained_on_MAPS_.9 model_type=unet epoches=$epoches seed=$seed train_size=.9
 
 python train_reduced.py with train_on=GuitarSet logdir=results/unet_model_trained_on_GuitarSet_.1 model_type=unet epoches=$epoches seed=$seed train_size=.1
 python train_reduced.py with train_on=GuitarSet logdir=results/unet_model_trained_on_GuitarSet_.2 model_type=unet epoches=$epoches seed=$seed train_size=.2
