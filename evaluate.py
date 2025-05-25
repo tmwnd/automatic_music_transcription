@@ -78,6 +78,9 @@ def evaluate(spec, dataset, device, logdir, leave_one_out, weight_file, dataset_
     model = UnetTranscriptionModel(ds_ksize, ds_stride,
                                   mode=mode, spec=spec, norm=sparsity, logdir=logdir)
     model.to(device)
+
+    weight_dir = weight_file.rsplit("/", 1)[0]
+    
     model_path = weight_file
     state_dict = torch.load(model_path)
     model.load_my_state_dict(state_dict)
@@ -94,6 +97,11 @@ def evaluate(spec, dataset, device, logdir, leave_one_out, weight_file, dataset_
             _, category, name = key.split('/')
             print(
                 f'{category:>32} {name:25}: {np.mean(values):.3f} ± {np.std(values):.3f}')
+
+    with open(weight_dir + "/metrics_" + dataset + "_final.csv", "w") as f:
+        f.write("ep;" + ";".join([key[7:] for key in metrics.keys() if key.startswith('metric/')]))
+        f.write("\n")
+        f.write("2000;" + ";".join([str(np.mean(values)) for key, values in metrics.items() if key.startswith('metric/')]))
 
     export_path = os.path.join(logdir, f'{dataset}_result_dict')
     pickle.dump(metrics, open(export_path, 'wb'))
