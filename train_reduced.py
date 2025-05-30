@@ -201,7 +201,7 @@ def train(spec, resume_iteration, train_on, pretrained_model_path, freeze_all_la
         loader = CustomBatchDataset(dataset_root_dir="results_monday/TRAIN_TRANSCRIPTION_unet_ON_MAPS_CQT_imagewise_230401-003349/batch", groups=train_dataset_groups,
                                  sequence_length=sequence_length, device=device, refresh=refresh, train_size=train_size)
     else:
-        loader = DataLoader(train_dataset, batch_size, shuffle=True, drop_last=True)
+        loader = DataLoader(train_dataset, batch_size, shuffle=True, drop_last=False)
     valloader = DataLoader(validation_dataset, 4,
                            shuffle=False, drop_last=True)
     # Getting one fixed batch for visualization

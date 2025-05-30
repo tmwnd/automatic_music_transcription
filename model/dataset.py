@@ -29,7 +29,8 @@ class PianoRollAudioDataset(Dataset):
         for group in groups:
             files = self.files(group)
 
-            if group == "train" and train_size != 1:
+            if group in ["train", 'AkPnBcht', 'AkPnBsdf', 'AkPnCGdD', 'AkPnStgb', 'SptkBGAm', 'SptkBGCl', 'StbgTGd2'] and train_size != 1:
+                print("Reducing training set size from %s to %s of %s" % (len(files), int(len(files) * train_size), group))
                 files, _ = train_test_split(files, train_size=train_size, random_state=seed)
 
             # self.files is defined in MAPS class
