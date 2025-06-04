@@ -2,7 +2,7 @@ from glob import glob
 import os
 import json
 
-list_of_result_dicts_files = glob("./**/*result_dict.txt", recursive=True)
+list_of_result_dicts_files = glob("./results/**/*result_dict.txt", recursive=True)
 
 
 for result_dict_filename in list_of_result_dicts_files:

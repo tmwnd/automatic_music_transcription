@@ -199,7 +199,7 @@ def train(spec, resume_iteration, train_on, pretrained_model_path, freeze_all_la
         loader = CustomBatchDataset(dataset_root_dir="results_monday/TRAIN_TRANSCRIPTION_unet_ON_MAPS_CQT_imagewise_230401-003349/batch", groups=train_dataset_groups,
                                  sequence_length=sequence_length, device=device, refresh=refresh)
     else:
-        loader = DataLoader(train_dataset, batch_size, shuffle=True, drop_last=True)
+        loader = DataLoader(train_dataset, batch_size, shuffle=True, drop_last=False)
     valloader = DataLoader(validation_dataset, 4,
                            shuffle=False, drop_last=True)
     # Getting one fixed batch for visualization
@@ -240,7 +240,7 @@ def train(spec, resume_iteration, train_on, pretrained_model_path, freeze_all_la
         optimizer.load_state_dict(torch.load(
             os.path.join(trained_dir, 'last-optimizer-state.pt')))
     
-    # new_eps = 1e-3
+    # new_eps = 5e-3
     # for m in model.modules():
     #     if isinstance(m, (nn.BatchNorm1d, nn.BatchNorm2d, nn.BatchNorm3d)):
     #         print(f"Adjusting eps of {m} from {m.eps} to {new_eps}")

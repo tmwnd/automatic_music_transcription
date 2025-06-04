@@ -4,6 +4,21 @@ epoches=2000
 seed=3281514
 
 function evaluate_model {
+    python evaluate_eps.py with weight_file=$1 dataset=GuitarSet device=cuda:1
+    python evaluate.py with weight_file=$1 dataset=GuitarSet device=cuda:1
+
+    python evaluate_eps.py with weight_file=$1 dataset=MAPS device=cuda:1
+    python evaluate.py with weight_file=$1 dataset=MAPS device=cuda:1
+    
+    python evaluate.py with weight_file=$1 dataset=SynthesizedInstruments device=cuda:1
+}
+
+function evaluate_model {
+    python evaluate_eps.py with weight_file=$1 dataset=GuitarSet device=cuda:1
+    python evaluate_eps.py with weight_file=$1 dataset=MAPS device=cuda:1
+}
+
+function evaluate_model {
     python evaluate.py with weight_file=$1 dataset=GuitarSet device=cuda:1
     python evaluate.py with weight_file=$1 dataset=MAPS device=cuda:1
     python evaluate.py with weight_file=$1 dataset=SynthesizedInstruments device=cuda:1
@@ -19,7 +34,7 @@ evaluate_model results/unet_model_trained_on_MAPS/model-$epoches.pt
 evaluate_model results/unet_model_trained_on_GuitarSet/model-$epoches.pt
 evaluate_model results/unet_model_trained_on_SynthesizedInstruments/model-$epoches.pt
 
-#TRANSFER FROM SYNTHESIZED INSTRUMENTS !!! SEED=34 !!!
+#TRANSFER FROM SYNTHESIZED INSTRUMENTS
 python train.py with train_on=MAPS logdir=results/transferred_unet_model_trained_on_MAPS model_type=unet pretrained_model_path=results/unet_model_trained_on_SynthesizedInstruments/model-$epoches.pt epoches=$epoches seed=$seed
 python train.py with train_on=GuitarSet logdir=results/transferred_unet_model_trained_on_GuitarSet model_type=unet pretrained_model_path=results/unet_model_trained_on_SynthesizedInstruments/model-$epoches.pt epoches=$epoches seed=$seed
 
@@ -39,11 +54,6 @@ python result_dict_analysis.py
 
 python result_table_generator.py results/unet_model_trained_on_MAPS results/unet_model_trained_on_GuitarSet results/unet_model_trained_on_SynthesizedInstruments  results/transferred_unet_model_trained_on_MAPS results/transferred_unet_model_trained_on_GuitarSet results/transferred_from_guitarset_unet_model_trained_on_MAPS results/transferred_from_MAPS_unet_model_trained_on_GuitarSet > results/table.txt
 
-function evaluate_model {
-    python evaluate_eps.py with weight_file=$1 dataset=GuitarSet device=cuda:1
-    python evaluate_eps.py with weight_file=$1 dataset=MAPS device=cuda:1
-}
-
 evaluate_model results/unet_model_trained_on_MAPS/model-$epoches.pt
 evaluate_model results/unet_model_trained_on_GuitarSet/model-$epoches.pt
 evaluate_model results/unet_model_trained_on_SynthesizedInstruments/model-$epoches.pt
@@ -51,11 +61,6 @@ evaluate_model results/transferred_from_guitarset_unet_model_trained_on_MAPS/mod
 evaluate_model results/transferred_from_MAPS_unet_model_trained_on_GuitarSet/model-$epoches.pt
 evaluate_model results/transferred_unet_model_trained_on_MAPS/model-$epoches.pt
 evaluate_model results/transferred_unet_model_trained_on_GuitarSet/model-$epoches.pt
-
-function evaluate_model {
-    python evaluate.py with weight_file=$1 dataset=GuitarSet device=cuda:1
-    python evaluate.py with weight_file=$1 dataset=MAPS device=cuda:1
-}
 
 python train_reduced.py with train_on=MAPS logdir=results/unet_model_trained_on_MAPS_.1 model_type=unet epoches=$epoches seed=$seed train_size=.1
 python train_reduced.py with train_on=MAPS logdir=results/unet_model_trained_on_MAPS_.2 model_type=unet epoches=$epoches seed=$seed train_size=.2
