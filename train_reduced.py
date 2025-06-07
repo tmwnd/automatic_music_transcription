@@ -265,10 +265,6 @@ def train(spec, resume_iteration, train_on, pretrained_model_path, freeze_all_la
             optimizer.zero_grad()
             predictions, losses, _ = model.run_on_batch(batch, batch_description=str(ep), batch_identifier=batch_idx)
             loss = sum(losses.values())
-            
-            # use torch.clamp to prevent device-side assert CUDA error
-            loss = torch.clamp(loss, min=0.0, max=1)
-
             total_loss += loss.item()
             loss.backward()
             nn.utils.clip_grad_value_(model.parameters(), clip_value=0.1)
