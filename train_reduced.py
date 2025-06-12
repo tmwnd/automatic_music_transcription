@@ -106,7 +106,7 @@ def get_gradients(model):
 
 def create_transcription_datasets(dataset_type):
     if dataset_type == "MAESTRO":
-        return [(MAESTRO, ['train']), (MAPS, ['ENSTDkAm', 'ENSTDkCl']), (MAPS, ['ENSTDkAm', 'ENSTDkCl'])]
+        return [(MAESTRO, ["train"]), (MAESTRO, ["validation"]), (MAESTRO, ["test"])]
     elif dataset_type == "MusicNet":
         return [(MusicNet, ['train']), (MusicNet, ['test']), (MAPS, ['ENSTDkAm', 'ENSTDkCl'])]
     elif dataset_type == "GuitarSet":

@@ -190,7 +190,7 @@ class PianoRollAudioDataset(Dataset):
 
 class MAESTRO(PianoRollAudioDataset):
 
-    def __init__(self, dataset_root_dir=".", path='MAESTRO/', groups=None, sequence_length=None, seed=42, refresh=False, device='cpu', train_size=1):
+    def __init__(self, dataset_root_dir=".", path='../datasets/MAESTRO/maestro-v3.0.0', groups=None, sequence_length=None, seed=42, refresh=False, device='cpu', train_size=1):
         super().__init__(path, dataset_root_dir, groups if groups is not None else [
             'train'], sequence_length, seed, refresh, device, train_size)
 
@@ -211,9 +211,17 @@ class MAESTRO(PianoRollAudioDataset):
                 raise RuntimeError(f'Group {group} is empty')
         else:
             metadata = json.load(
-                open(os.path.join(self.path, 'maestro-v2.0.0.json')))
-            files = sorted([(os.path.join(self.path, row['audio_filename'].replace('.wav', '.flac')),
-                             os.path.join(self.path, row['midi_filename'])) for row in metadata if row['split'] == group])
+                open(os.path.join(self.path, 'maestro-v3.0.0.json')))
+            files = sorted([
+                (
+                    os.path.join(self.path, metadata["audio_filename"][k].replace(".wav", ".flac")),
+                    os.path.join(self.path, v)
+                )
+                for k, v in metadata["midi_filename"].items() \
+                if metadata["split"][k] == group
+            ])
+            # files = sorted([(os.path.join(self.path, row['audio_filename'].replace('.wav', '.flac')),
+            #                  os.path.join(self.path, row['midi_filename'])) for row in metadata if row['split'] == group])
 
             files = [(audio if os.path.exists(audio) else audio.replace(
                 '.flac', '.wav'), midi) for audio, midi in files]
