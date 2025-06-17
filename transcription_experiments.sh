@@ -203,6 +203,14 @@ evaluate_model results_optional/transferred_from_MAESTRO_unet_model_trained_on_M
 evaluate_model results_optional/transferred_unet_model_trained_on_MAESTRO/model-$epoches.pt
 
 python train_reduced.py with train_on=MAESTRO logdir=results_optional/unet_model_trained_on_MAESTRO_.23 model_type=unet epoches=$epoches seed=$seed train_size=.23
+python train_reduced.py with train_on=MAESTRO logdir=results_optional/transferred_from_MAPS_unet_model_trained_on_MAESTRO_.23 model_type=unet pretrained_model_path=results_optional/unet_model_trained_on_MAPS/model-$epoches.pt epoches=$epoches seed=$seed train_size=.23
+python train_reduced.py with train_on=MAESTRO logdir=results_optional/transferred_unet_model_trained_on_MAESTRO_.23 model_type=unet pretrained_model_path=results_optional/unet_model_trained_on_SynthesizedInstruments/model-$epoches.pt epoches=$epoches seed=$seed train_size=.23
+python train.py with train_on=MAPS logdir=results_optional/transferred_from_MAESTRO_.23_unet_model_trained_on_MAPS model_type=unet pretrained_model_path=results_optional/unet_model_trained_on_MAESTRO_.23/model-$epoches.pt epoches=$epoches seed=$seed
+
+evaluate_model results_optional/unet_model_trained_on_MAESTRO_.23/model-$epoches.pt
+evaluate_model results_optional/transferred_from_MAPS_unet_model_trained_on_MAESTRO_.23/model-$epoches.pt
+evaluate_model results_optional/transferred_unet_model_trained_on_MAESTRO_.23/model-$epoches.pt
+evaluate_model results_optional/transferred_from_MAESTRO_.23_unet_model_trained_on_MAPS/model-$epoches.pt
 
 function evaluate_model {
     python evaluate_eps.py with weight_file=$1 dataset=MAESTRO device=cuda:1
