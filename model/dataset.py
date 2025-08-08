@@ -29,9 +29,18 @@ class PianoRollAudioDataset(Dataset):
         for group in groups:
             files = self.files(group)
 
-            if group in ["train", 'AkPnBcht', 'AkPnBsdf', 'AkPnCGdD', 'AkPnStgb', 'SptkBGAm', 'SptkBGCl', 'StbgTGd2'] and train_size != 1:
+            if group in ["train", "AkPnBcht", "AkPnBsdf", "AkPnCGdD", "AkPnStgb", "SptkBGAm", "SptkBGCl", "StbgTGd2"] and train_size != 1:
                 print("Reducing training set size from %s to %s of %s" % (len(files), int(len(files) * train_size), group))
-                files, _ = train_test_split(files, train_size=train_size, random_state=seed)
+                if (train_size > .02 or group == "train"):
+                    files, _ = train_test_split(files, train_size=train_size, random_state=seed)
+                elif train_size == .02 and group in ["AkPnCGdD", "SptkBGAm", "SptkBGCl", "StbgTGd2"]:
+                    files, _ = train_test_split(files, train_size=train_size*7/4, random_state=seed)
+                elif train_size == .01 and group in ["SptkBGAm", "SptkBGCl"]:
+                    files, _ = train_test_split(files, train_size=train_size*7/2, random_state=seed)
+                elif train_size == .005 and group in ["SptkBGCl"]:
+                    files, _ = train_test_split(files, train_size=train_size*7, random_state=seed)
+                else:
+                    files = []
 
             # self.files is defined in MAPS class
             for input_files in tqdm(files, desc='Loading group %s' % group):
@@ -305,7 +314,79 @@ class SynthesizedTrumpet(PianoRollAudioDataset):
 
 class SynthesizedInstruments(PianoRollAudioDataset):
 
-    def __init__(self, dataset_root_dir=".",  path='data/synthesize', groups=None, sequence_length=None, seed=42, refresh=False, device='cpu', train_size=1):
+    def __init__(self, dataset_root_dir=".",  path='data/guitarset_synthesized/synthesize', groups=None, sequence_length=None, seed=42, refresh=False, device='cpu', train_size=1):
+        super().__init__(path, dataset_root_dir, groups if groups is not None else [
+            'all'], sequence_length, seed, refresh, device, train_size)
+
+    @classmethod
+    def available_groups(cls):
+        return ['train', 'test', 'val']
+
+    def files(self, group):
+        # flacs = sorted(glob.glob(os.path.join(self.path, "audio", '*solo*.wav')))
+        # midis = sorted(glob.glob(os.path.join(self.path, "labels", '*solo*.jams.mid')))
+        wavs = []
+        labels = []
+        if group in self.available_groups():
+            for paths in glob.glob(self.path+"*"):
+                print(f"Adding instrument from {paths} to {group}")
+                found_wavs = sorted(
+                    glob.glob(os.path.join(paths, group, "audio", '*.wav')))
+                for wav in found_wavs:
+                    label = find_label_for_given_wav(os.path.join(paths, group, "labels"), wav)
+                    if label == None:
+                        print(f"Warning - couldn't find corresponding label for file {wav}")
+                        assert(False)
+                    else:
+                        labels.append(label)
+                        wavs.append(wav)
+                check_consistency_of_size_of_audio_and_labels(wavs, labels)
+            files = list(zip(wavs, labels))
+            print(f"Number of audio samples: {len(wavs)}, Number of labels: {len(labels)}")
+        if len(files) == 0:
+            raise RuntimeError(f'Group {group} is empty')
+
+        return prepare_list_of_tuples_with_audio_and_label_filenames(files)
+
+class MAPSSynthesizedInstruments(PianoRollAudioDataset):
+
+    def __init__(self, dataset_root_dir=".",  path='data/maps_synthesized/synthesize', groups=None, sequence_length=None, seed=42, refresh=False, device='cpu', train_size=1):
+        super().__init__(path, dataset_root_dir, groups if groups is not None else [
+            'all'], sequence_length, seed, refresh, device, train_size)
+
+    @classmethod
+    def available_groups(cls):
+        return ['train', 'test', 'val']
+
+    def files(self, group):
+        # flacs = sorted(glob.glob(os.path.join(self.path, "audio", '*solo*.wav')))
+        # midis = sorted(glob.glob(os.path.join(self.path, "labels", '*solo*.jams.mid')))
+        wavs = []
+        labels = []
+        if group in self.available_groups():
+            for paths in glob.glob(self.path+"*"):
+                print(f"Adding instrument from {paths} to {group}")
+                found_wavs = sorted(
+                    glob.glob(os.path.join(paths, group, "audio", '*.wav')))
+                for wav in found_wavs:
+                    label = find_label_for_given_wav(os.path.join(paths, group, "labels"), wav)
+                    if label == None:
+                        print(f"Warning - couldn't find corresponding label for file {wav}")
+                        assert(False)
+                    else:
+                        labels.append(label)
+                        wavs.append(wav)
+                check_consistency_of_size_of_audio_and_labels(wavs, labels)
+            files = list(zip(wavs, labels))
+            print(f"Number of audio samples: {len(wavs)}, Number of labels: {len(labels)}")
+        if len(files) == 0:
+            raise RuntimeError(f'Group {group} is empty')
+
+        return prepare_list_of_tuples_with_audio_and_label_filenames(files)
+
+class FullSynthesizedInstruments(PianoRollAudioDataset):
+
+    def __init__(self, dataset_root_dir=".",  path='data/maps_and_guitarset_synthesized/synthesize', groups=None, sequence_length=None, seed=42, refresh=False, device='cpu', train_size=1):
         super().__init__(path, dataset_root_dir, groups if groups is not None else [
             'all'], sequence_length, seed, refresh, device, train_size)
 

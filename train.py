@@ -20,7 +20,7 @@ from tqdm import tqdm
 from fail_observer import FailObserver
 from model import *
 from model.constants import *
-from model.dataset import (OriginalMAPS, SynthesizedInstruments,
+from model.dataset import (OriginalMAPS, SynthesizedInstruments, FullSynthesizedInstruments, MAPSSynthesizedInstruments,
                            SynthesizedTrumpet, CustomBatchDataset)
 from model.evaluate_fn import evaluate_wo_velocity
 from snapshot import Snapshot
@@ -113,6 +113,10 @@ def create_transcription_datasets(dataset_type):
         return [(SynthesizedTrumpet, ['train']), (SynthesizedTrumpet, ['val']), (SynthesizedTrumpet, ['test'])]
     elif dataset_type == "SynthesizedInstruments":
         return [(SynthesizedInstruments, ['train']), (SynthesizedInstruments, ['val']), (SynthesizedInstruments, ['test'])]
+    elif dataset_type == "MAPSSynthesizedInstruments":
+        return [(MAPSSynthesizedInstruments, ['train']), (MAPSSynthesizedInstruments, ['val']), (MAPSSynthesizedInstruments, ['test'])]
+    elif dataset_type == "FullSynthesizedInstruments":
+        return [(FullSynthesizedInstruments, ['train']), (FullSynthesizedInstruments, ['val']), (FullSynthesizedInstruments, ['test'])]
     elif dataset_type == "MAPS":
         return [(MAPS, ['AkPnBcht', 'AkPnBsdf', 'AkPnCGdD', 'AkPnStgb', 'SptkBGAm', 'SptkBGCl', 'StbgTGd2']),
                 (MAPS, ['ENSTDkAm', 'ENSTDkCl']),
