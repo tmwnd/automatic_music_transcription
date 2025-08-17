@@ -18,7 +18,7 @@ amt_env/*
 default_sound_font.sf2
 *.log
 *.wandb
-*.json
+# *.json
 latest-run
 classification_results/*
 old_runs/*
@@ -27,5 +27,14 @@ config.yaml
 .DS_Store
 *_runs/
 final*
-results*
+# results*
+results*/result_dict
+results*/*/_sources
+results*/*/eval
+results*/*/MIDI_results
+results*/*/SNAPSHOT
+results*/*/*.0
+results*/*/1/cout.txt
+results*/*/1/metrics.json
+*.pt
 data/maestro*
