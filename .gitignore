@@ -28,7 +28,6 @@ config.yaml
 *_runs/
 final*
 # results*
-results*/result_dict
 results*/*/_sources
 results*/*/eval
 results*/*/MIDI_results

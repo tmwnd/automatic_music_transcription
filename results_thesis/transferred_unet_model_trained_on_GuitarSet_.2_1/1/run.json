@@ -163,7 +163,7 @@
       ]
     ]
   },
-  "heartbeat": "2025-08-17T17:41:29.508614",
+  "heartbeat": "2025-08-17T17:53:35.398616",
   "host": {
     "ENV": {},
     "cpu": "Intel(R) Xeon(R) Platinum 8168 CPU @ 2.70GHz",
@@ -239,5 +239,6 @@
   "resources": [],
   "result": null,
   "start_time": "2025-08-17T16:05:09.948240",
-  "status": "RUNNING"
+  "status": "COMPLETED",
+  "stop_time": "2025-08-17T17:53:35.395341"
 }
