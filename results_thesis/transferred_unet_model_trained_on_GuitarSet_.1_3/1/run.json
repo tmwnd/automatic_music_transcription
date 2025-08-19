@@ -16,83 +16,83 @@
     "name": "train_transcriber",
     "repositories": [
       {
-        "commit": "57169c89f6ea0cfe77093ce0906f9a644744b745",
-        "dirty": false,
+        "commit": "b951640a86c3ba8a706218b7023652f0d0782766",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "57169c89f6ea0cfe77093ce0906f9a644744b745",
-        "dirty": false,
+        "commit": "b951640a86c3ba8a706218b7023652f0d0782766",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "57169c89f6ea0cfe77093ce0906f9a644744b745",
-        "dirty": false,
+        "commit": "b951640a86c3ba8a706218b7023652f0d0782766",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "57169c89f6ea0cfe77093ce0906f9a644744b745",
-        "dirty": false,
+        "commit": "b951640a86c3ba8a706218b7023652f0d0782766",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "57169c89f6ea0cfe77093ce0906f9a644744b745",
-        "dirty": false,
+        "commit": "b951640a86c3ba8a706218b7023652f0d0782766",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "57169c89f6ea0cfe77093ce0906f9a644744b745",
-        "dirty": false,
+        "commit": "b951640a86c3ba8a706218b7023652f0d0782766",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "57169c89f6ea0cfe77093ce0906f9a644744b745",
-        "dirty": false,
+        "commit": "b951640a86c3ba8a706218b7023652f0d0782766",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "57169c89f6ea0cfe77093ce0906f9a644744b745",
-        "dirty": false,
+        "commit": "b951640a86c3ba8a706218b7023652f0d0782766",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "57169c89f6ea0cfe77093ce0906f9a644744b745",
-        "dirty": false,
+        "commit": "b951640a86c3ba8a706218b7023652f0d0782766",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "57169c89f6ea0cfe77093ce0906f9a644744b745",
-        "dirty": false,
+        "commit": "b951640a86c3ba8a706218b7023652f0d0782766",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "57169c89f6ea0cfe77093ce0906f9a644744b745",
-        "dirty": false,
+        "commit": "b951640a86c3ba8a706218b7023652f0d0782766",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "57169c89f6ea0cfe77093ce0906f9a644744b745",
-        "dirty": false,
+        "commit": "b951640a86c3ba8a706218b7023652f0d0782766",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "57169c89f6ea0cfe77093ce0906f9a644744b745",
-        "dirty": false,
+        "commit": "b951640a86c3ba8a706218b7023652f0d0782766",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "57169c89f6ea0cfe77093ce0906f9a644744b745",
-        "dirty": false,
+        "commit": "b951640a86c3ba8a706218b7023652f0d0782766",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "57169c89f6ea0cfe77093ce0906f9a644744b745",
-        "dirty": false,
+        "commit": "b951640a86c3ba8a706218b7023652f0d0782766",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "57169c89f6ea0cfe77093ce0906f9a644744b745",
-        "dirty": false,
+        "commit": "b951640a86c3ba8a706218b7023652f0d0782766",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       }
     ],
@@ -163,18 +163,7 @@
       ]
     ]
   },
-  "fail_trace": [
-    "Traceback (most recent call last):\n",
-    "  File \"/home/users/twende/miniconda3/envs/music-transcription-frozen/lib/python3.8/site-packages/sacred/config/captured_function.py\", line 42, in captured_function\n    result = wrapped(*args, **kwargs)\n",
-    "  File \"train_reduced.py\", line 264, in train\n    for batch in loader:\n",
-    "  File \"/home/users/twende/miniconda3/envs/music-transcription-frozen/lib/python3.8/site-packages/torch/utils/data/dataloader.py\", line 630, in __next__\n    data = self._next_data()\n",
-    "  File \"/home/users/twende/miniconda3/envs/music-transcription-frozen/lib/python3.8/site-packages/torch/utils/data/dataloader.py\", line 673, in _next_data\n    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration\n",
-    "  File \"/home/users/twende/miniconda3/envs/music-transcription-frozen/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py\", line 52, in fetch\n    data = [self.dataset[idx] for idx in possibly_batched_index]\n",
-    "  File \"/home/users/twende/miniconda3/envs/music-transcription-frozen/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py\", line 52, in <listcomp>\n    data = [self.dataset[idx] for idx in possibly_batched_index]\n",
-    "  File \"/home/users/twende/dev/masterarbeit/automatic_music_transcription/model/dataset.py\", line 90, in __getitem__\n    result['audio'] = data['audio'][begin:end].to(self.device)\n",
-    "RuntimeError: CUDA error: device-side assert triggered\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n\n"
-  ],
-  "heartbeat": "2025-08-16T18:54:55.180776",
+  "heartbeat": "2025-08-19T00:22:58.070157",
   "host": {
     "ENV": {},
     "cpu": "Intel(R) Xeon(R) Platinum 8168 CPU @ 2.70GHz",
@@ -207,7 +196,7 @@
       "logdir": "results_thesis/transferred_unet_model_trained_on_GuitarSet_.1_3",
       "model_type": "unet",
       "pretrained_model_path": "results/unet_model_trained_on_SynthesizedInstruments/model-2000.pt",
-      "seed": 3281513,
+      "seed": 3281514,
       "train_on": "GuitarSet",
       "train_size": 0.1
     },
@@ -240,7 +229,7 @@
         "model_type=unet",
         "pretrained_model_path=results/unet_model_trained_on_SynthesizedInstruments/model-2000.pt",
         "epoches=4000",
-        "seed=3281513",
+        "seed=3281514",
         "train_size=.1"
       ],
       "help": false,
@@ -249,7 +238,7 @@
   },
   "resources": [],
   "result": null,
-  "start_time": "2025-08-16T18:33:03.488274",
-  "status": "FAILED",
-  "stop_time": "2025-08-16T18:54:55.259182"
+  "start_time": "2025-08-18T22:07:39.282510",
+  "status": "COMPLETED",
+  "stop_time": "2025-08-19T00:22:58.066883"
 }

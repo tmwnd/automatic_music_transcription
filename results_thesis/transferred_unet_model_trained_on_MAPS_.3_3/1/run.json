@@ -163,7 +163,7 @@
       ]
     ]
   },
-  "heartbeat": "2025-08-18T15:39:48.834363",
+  "heartbeat": "2025-08-18T16:14:32.385188",
   "host": {
     "ENV": {},
     "cpu": "AMD Ryzen Threadripper PRO 7995WX 96-Cores",
@@ -239,5 +239,6 @@
   "resources": [],
   "result": null,
   "start_time": "2025-08-18T14:31:50.072644",
-  "status": "RUNNING"
+  "status": "COMPLETED",
+  "stop_time": "2025-08-18T16:14:32.383129"
 }
