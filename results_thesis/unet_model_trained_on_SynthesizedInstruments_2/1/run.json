@@ -1,0 +1,240 @@
+{
+  "artifacts": [],
+  "command": "train",
+  "experiment": {
+    "base_dir": "/home/users/twende/dev/masterarbeit/automatic_music_transcription",
+    "dependencies": [
+      "matplotlib==3.0.2",
+      "nnAudio==0.2.0",
+      "numpy==1.21.6",
+      "sacred==0.8.4",
+      "torch==2.4.1+cu121",
+      "torchvision==0.13.0",
+      "tqdm==4.64.0"
+    ],
+    "mainfile": "train.py",
+    "name": "train_transcriber",
+    "repositories": [
+      {
+        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
+        "dirty": false,
+        "url": "git@github.com:tmwnd/automatic_music_transcription.git"
+      },
+      {
+        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
+        "dirty": false,
+        "url": "git@github.com:tmwnd/automatic_music_transcription.git"
+      },
+      {
+        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
+        "dirty": false,
+        "url": "git@github.com:tmwnd/automatic_music_transcription.git"
+      },
+      {
+        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
+        "dirty": false,
+        "url": "git@github.com:tmwnd/automatic_music_transcription.git"
+      },
+      {
+        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
+        "dirty": false,
+        "url": "git@github.com:tmwnd/automatic_music_transcription.git"
+      },
+      {
+        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
+        "dirty": false,
+        "url": "git@github.com:tmwnd/automatic_music_transcription.git"
+      },
+      {
+        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
+        "dirty": false,
+        "url": "git@github.com:tmwnd/automatic_music_transcription.git"
+      },
+      {
+        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
+        "dirty": false,
+        "url": "git@github.com:tmwnd/automatic_music_transcription.git"
+      },
+      {
+        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
+        "dirty": false,
+        "url": "git@github.com:tmwnd/automatic_music_transcription.git"
+      },
+      {
+        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
+        "dirty": false,
+        "url": "git@github.com:tmwnd/automatic_music_transcription.git"
+      },
+      {
+        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
+        "dirty": false,
+        "url": "git@github.com:tmwnd/automatic_music_transcription.git"
+      },
+      {
+        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
+        "dirty": false,
+        "url": "git@github.com:tmwnd/automatic_music_transcription.git"
+      },
+      {
+        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
+        "dirty": false,
+        "url": "git@github.com:tmwnd/automatic_music_transcription.git"
+      },
+      {
+        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
+        "dirty": false,
+        "url": "git@github.com:tmwnd/automatic_music_transcription.git"
+      },
+      {
+        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
+        "dirty": false,
+        "url": "git@github.com:tmwnd/automatic_music_transcription.git"
+      },
+      {
+        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
+        "dirty": false,
+        "url": "git@github.com:tmwnd/automatic_music_transcription.git"
+      }
+    ],
+    "sources": [
+      [
+        "fail_observer.py",
+        "_sources/fail_observer_e0ed79beaf690030515509bb17364a36.py"
+      ],
+      [
+        "model/Unet_blocks.py",
+        "_sources/Unet_blocks_f96af1a21a9af882f40300d7e7818f45.py"
+      ],
+      [
+        "model/__init__.py",
+        "_sources/__init___ba942240ea973f4d2490866c6b9b07e4.py"
+      ],
+      [
+        "model/constants.py",
+        "_sources/constants_59ef321763fbea75644031441c07b076.py"
+      ],
+      [
+        "model/dataset.py",
+        "_sources/dataset_5de184b2ec1ee596c092b4e94d13bd6c.py"
+      ],
+      [
+        "model/dataset_utils.py",
+        "_sources/dataset_utils_d20ab1ecfff673f08dbaec7827c3835b.py"
+      ],
+      [
+        "model/decoding.py",
+        "_sources/decoding_724bd9fa58d240d447ae13b5f8bb3907.py"
+      ],
+      [
+        "model/evaluate_fn.py",
+        "_sources/evaluate_fn_efcc9aa9689092adf551040d6bc45dbe.py"
+      ],
+      [
+        "model/instrument_recognition_model.py",
+        "_sources/instrument_recognition_model_8c5fa96c121e44e56e27f488b1863f62.py"
+      ],
+      [
+        "model/midi.py",
+        "_sources/midi_9ce2c6389e8b64d1acf835d014a6cbf8.py"
+      ],
+      [
+        "model/model.py",
+        "_sources/model_bdd9e4fa7e5e1cd4a75b274e972889c0.py"
+      ],
+      [
+        "model/normalization.py",
+        "_sources/normalization_d355035d8b1d1cc9b4c593f1dbe5e613.py"
+      ],
+      [
+        "model/tensor_visualizer.py",
+        "_sources/tensor_visualizer_ab9048fca15bd9798a8a0574cbe9411e.py"
+      ],
+      [
+        "model/utils.py",
+        "_sources/utils_557b15983127430d529bbaef92358ceb.py"
+      ],
+      [
+        "snapshot.py",
+        "_sources/snapshot_9492422ebc5eaf83e5be8edf48972d5e.py"
+      ],
+      [
+        "train.py",
+        "_sources/train_f67692adaa672facff948d580f71da60.py"
+      ]
+    ]
+  },
+  "heartbeat": "2025-08-19T21:56:08.091592",
+  "host": {
+    "ENV": {},
+    "cpu": "AMD Ryzen Threadripper PRO 7995WX 96-Cores",
+    "gpus": {
+      "driver_version": "550.144.03",
+      "gpus": [
+        {
+          "model": "NVIDIA RTX 6000 Ada Generation",
+          "persistence_mode": false,
+          "total_memory": 49140
+        },
+        {
+          "model": "NVIDIA RTX 6000 Ada Generation",
+          "persistence_mode": false,
+          "total_memory": 49140
+        }
+      ]
+    },
+    "hostname": "ds4",
+    "os": [
+      "Linux",
+      "Linux-6.8.0-51-generic-x86_64-with-glibc2.10"
+    ],
+    "python_version": "3.8.0"
+  },
+  "meta": {
+    "command": "train",
+    "config_updates": {
+      "epoches": 2000,
+      "logdir": "results_thesis/unet_model_trained_on_SynthesizedInstruments_2",
+      "model_type": "unet",
+      "seed": 3281514,
+      "train_on": "SynthesizedInstruments"
+    },
+    "named_configs": [],
+    "options": {
+      "--beat-interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": null,
+      "--force": false,
+      "--help": false,
+      "--id": null,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print-config": false,
+      "--priority": null,
+      "--queue": false,
+      "--s3": null,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [
+        "train_on=SynthesizedInstruments",
+        "logdir=results_thesis/unet_model_trained_on_SynthesizedInstruments_2",
+        "model_type=unet",
+        "epoches=2000",
+        "seed=3281514"
+      ],
+      "help": false,
+      "with": true
+    }
+  },
+  "resources": [],
+  "result": null,
+  "start_time": "2025-08-19T21:56:07.468574",
+  "status": "INTERRUPTED",
+  "stop_time": "2025-08-19T21:56:08.095053"
+}
