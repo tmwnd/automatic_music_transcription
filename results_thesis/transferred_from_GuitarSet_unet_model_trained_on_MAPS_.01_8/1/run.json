@@ -16,83 +16,83 @@
     "name": "train_transcriber",
     "repositories": [
       {
-        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
-        "dirty": false,
+        "commit": "aeefa2319470760d094bae4cf8824f6d9c3ff2bf",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
-        "dirty": false,
+        "commit": "aeefa2319470760d094bae4cf8824f6d9c3ff2bf",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
-        "dirty": false,
+        "commit": "aeefa2319470760d094bae4cf8824f6d9c3ff2bf",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
-        "dirty": false,
+        "commit": "aeefa2319470760d094bae4cf8824f6d9c3ff2bf",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
-        "dirty": false,
+        "commit": "aeefa2319470760d094bae4cf8824f6d9c3ff2bf",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
-        "dirty": false,
+        "commit": "aeefa2319470760d094bae4cf8824f6d9c3ff2bf",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
-        "dirty": false,
+        "commit": "aeefa2319470760d094bae4cf8824f6d9c3ff2bf",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
-        "dirty": false,
+        "commit": "aeefa2319470760d094bae4cf8824f6d9c3ff2bf",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
-        "dirty": false,
+        "commit": "aeefa2319470760d094bae4cf8824f6d9c3ff2bf",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
-        "dirty": false,
+        "commit": "aeefa2319470760d094bae4cf8824f6d9c3ff2bf",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
-        "dirty": false,
+        "commit": "aeefa2319470760d094bae4cf8824f6d9c3ff2bf",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
-        "dirty": false,
+        "commit": "aeefa2319470760d094bae4cf8824f6d9c3ff2bf",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
-        "dirty": false,
+        "commit": "aeefa2319470760d094bae4cf8824f6d9c3ff2bf",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
-        "dirty": false,
+        "commit": "aeefa2319470760d094bae4cf8824f6d9c3ff2bf",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
-        "dirty": false,
+        "commit": "aeefa2319470760d094bae4cf8824f6d9c3ff2bf",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
-        "dirty": false,
+        "commit": "aeefa2319470760d094bae4cf8824f6d9c3ff2bf",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       }
     ],
@@ -163,29 +163,29 @@
       ]
     ]
   },
-  "heartbeat": "2025-08-19T22:34:22.819413",
+  "heartbeat": "2025-08-20T21:26:44.903215",
   "host": {
     "ENV": {},
-    "cpu": "AMD Ryzen Threadripper PRO 7995WX 96-Cores",
+    "cpu": "Intel(R) Xeon(R) Platinum 8168 CPU @ 2.70GHz",
     "gpus": {
-      "driver_version": "550.144.03",
+      "driver_version": "535.183.01",
       "gpus": [
         {
-          "model": "NVIDIA RTX 6000 Ada Generation",
+          "model": "NVIDIA RTX A6000",
           "persistence_mode": false,
           "total_memory": 49140
         },
         {
-          "model": "NVIDIA RTX 6000 Ada Generation",
+          "model": "Quadro P5000",
           "persistence_mode": false,
-          "total_memory": 49140
+          "total_memory": 16384
         }
       ]
     },
-    "hostname": "ds4",
+    "hostname": "ds1",
     "os": [
       "Linux",
-      "Linux-6.8.0-51-generic-x86_64-with-glibc2.10"
+      "Linux-5.15.0-130-generic-x86_64-with-glibc2.10"
     ],
     "python_version": "3.8.0"
   },
@@ -196,7 +196,7 @@
       "logdir": "results_thesis/transferred_from_GuitarSet_unet_model_trained_on_MAPS_.01_8",
       "model_type": "unet",
       "pretrained_model_path": "results/unet_model_trained_on_GuitarSet/model-2000.pt",
-      "seed": 32815148,
+      "seed": 3281518,
       "train_on": "MAPS",
       "train_size": 0.01
     },
@@ -229,7 +229,7 @@
         "model_type=unet",
         "pretrained_model_path=results/unet_model_trained_on_GuitarSet/model-2000.pt",
         "epoches=4000",
-        "seed=32815148",
+        "seed=3281518",
         "train_size=.01"
       ],
       "help": false,
@@ -238,7 +238,6 @@
   },
   "resources": [],
   "result": null,
-  "start_time": "2025-08-19T20:38:32.977214",
-  "status": "COMPLETED",
-  "stop_time": "2025-08-19T22:34:22.817194"
+  "start_time": "2025-08-20T21:25:24.270748",
+  "status": "RUNNING"
 }

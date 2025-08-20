@@ -16,83 +16,83 @@
     "name": "train_transcriber",
     "repositories": [
       {
-        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
-        "dirty": false,
+        "commit": "aeefa2319470760d094bae4cf8824f6d9c3ff2bf",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
-        "dirty": false,
+        "commit": "aeefa2319470760d094bae4cf8824f6d9c3ff2bf",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
-        "dirty": false,
+        "commit": "aeefa2319470760d094bae4cf8824f6d9c3ff2bf",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
-        "dirty": false,
+        "commit": "aeefa2319470760d094bae4cf8824f6d9c3ff2bf",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
-        "dirty": false,
+        "commit": "aeefa2319470760d094bae4cf8824f6d9c3ff2bf",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
-        "dirty": false,
+        "commit": "aeefa2319470760d094bae4cf8824f6d9c3ff2bf",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
-        "dirty": false,
+        "commit": "aeefa2319470760d094bae4cf8824f6d9c3ff2bf",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
-        "dirty": false,
+        "commit": "aeefa2319470760d094bae4cf8824f6d9c3ff2bf",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
-        "dirty": false,
+        "commit": "aeefa2319470760d094bae4cf8824f6d9c3ff2bf",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
-        "dirty": false,
+        "commit": "aeefa2319470760d094bae4cf8824f6d9c3ff2bf",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
-        "dirty": false,
+        "commit": "aeefa2319470760d094bae4cf8824f6d9c3ff2bf",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
-        "dirty": false,
+        "commit": "aeefa2319470760d094bae4cf8824f6d9c3ff2bf",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
-        "dirty": false,
+        "commit": "aeefa2319470760d094bae4cf8824f6d9c3ff2bf",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
-        "dirty": false,
+        "commit": "aeefa2319470760d094bae4cf8824f6d9c3ff2bf",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
-        "dirty": false,
+        "commit": "aeefa2319470760d094bae4cf8824f6d9c3ff2bf",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "732346b5f05b28e95931f7ddff0b92bfc3d19148",
-        "dirty": false,
+        "commit": "aeefa2319470760d094bae4cf8824f6d9c3ff2bf",
+        "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       }
     ],
@@ -163,7 +163,7 @@
       ]
     ]
   },
-  "heartbeat": "2025-08-20T20:37:07.611330",
+  "heartbeat": "2025-08-20T21:26:39.198645",
   "host": {
     "ENV": {},
     "cpu": "Intel(R) Xeon(R) Platinum 8168 CPU @ 2.70GHz",
@@ -182,7 +182,7 @@
         }
       ]
     },
-    "hostname": "ds3",
+    "hostname": "ds1",
     "os": [
       "Linux",
       "Linux-5.15.0-130-generic-x86_64-with-glibc2.10"
@@ -196,7 +196,7 @@
       "logdir": "results_thesis/transferred_from_GuitarSet_unet_model_trained_on_MAPS_.005_8",
       "model_type": "unet",
       "pretrained_model_path": "results/unet_model_trained_on_GuitarSet/model-2000.pt",
-      "seed": 32815148,
+      "seed": 3281518,
       "train_on": "MAPS",
       "train_size": 0.005
     },
@@ -229,7 +229,7 @@
         "model_type=unet",
         "pretrained_model_path=results/unet_model_trained_on_GuitarSet/model-2000.pt",
         "epoches=4000",
-        "seed=32815148",
+        "seed=3281518",
         "train_size=.005"
       ],
       "help": false,
@@ -238,6 +238,6 @@
   },
   "resources": [],
   "result": null,
-  "start_time": "2025-08-20T11:51:51.995704",
+  "start_time": "2025-08-20T21:23:38.455391",
   "status": "RUNNING"
 }

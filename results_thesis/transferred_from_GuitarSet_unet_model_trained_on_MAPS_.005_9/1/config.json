@@ -37,7 +37,7 @@
   "pretrained_model_path": "results/unet_model_trained_on_GuitarSet/model-2000.pt",
   "refresh": false,
   "resume_iteration": null,
-  "seed": 32815149,
+  "seed": 3281519,
   "sequence_length": 327680,
   "spec": "CQT",
   "start_debug_epoch": 1,
