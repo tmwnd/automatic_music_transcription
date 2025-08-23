@@ -241,6 +241,12 @@ def train(spec, resume_iteration, train_on, pretrained_model_path, freeze_all_la
         optimizer = torch.optim.Adam(model.parameters(), learning_rate)
         optimizer.load_state_dict(torch.load(
             os.path.join(trained_dir, 'last-optimizer-state.pt')))
+    
+    new_eps = 5e-3
+    for m in model.modules():
+        if isinstance(m, (nn.BatchNorm1d, nn.BatchNorm2d, nn.BatchNorm3d)):
+            print(f"Adjusting eps of {m} from {m.eps} to {new_eps}")
+            m.eps = new_eps
 
     summary(model)
     if debug_mode:

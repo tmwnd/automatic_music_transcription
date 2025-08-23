@@ -16,82 +16,82 @@
     "name": "train_transcriber",
     "repositories": [
       {
-        "commit": "73c5c28cafd05008516da8184aa323b90f3c6a0b",
+        "commit": "c33275e69d5eb664232ca7eb6427ac893263c4aa",
         "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "73c5c28cafd05008516da8184aa323b90f3c6a0b",
+        "commit": "c33275e69d5eb664232ca7eb6427ac893263c4aa",
         "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "73c5c28cafd05008516da8184aa323b90f3c6a0b",
+        "commit": "c33275e69d5eb664232ca7eb6427ac893263c4aa",
         "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "73c5c28cafd05008516da8184aa323b90f3c6a0b",
+        "commit": "c33275e69d5eb664232ca7eb6427ac893263c4aa",
         "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "73c5c28cafd05008516da8184aa323b90f3c6a0b",
+        "commit": "c33275e69d5eb664232ca7eb6427ac893263c4aa",
         "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "73c5c28cafd05008516da8184aa323b90f3c6a0b",
+        "commit": "c33275e69d5eb664232ca7eb6427ac893263c4aa",
         "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "73c5c28cafd05008516da8184aa323b90f3c6a0b",
+        "commit": "c33275e69d5eb664232ca7eb6427ac893263c4aa",
         "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "73c5c28cafd05008516da8184aa323b90f3c6a0b",
+        "commit": "c33275e69d5eb664232ca7eb6427ac893263c4aa",
         "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "73c5c28cafd05008516da8184aa323b90f3c6a0b",
+        "commit": "c33275e69d5eb664232ca7eb6427ac893263c4aa",
         "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "73c5c28cafd05008516da8184aa323b90f3c6a0b",
+        "commit": "c33275e69d5eb664232ca7eb6427ac893263c4aa",
         "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "73c5c28cafd05008516da8184aa323b90f3c6a0b",
+        "commit": "c33275e69d5eb664232ca7eb6427ac893263c4aa",
         "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "73c5c28cafd05008516da8184aa323b90f3c6a0b",
+        "commit": "c33275e69d5eb664232ca7eb6427ac893263c4aa",
         "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "73c5c28cafd05008516da8184aa323b90f3c6a0b",
+        "commit": "c33275e69d5eb664232ca7eb6427ac893263c4aa",
         "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "73c5c28cafd05008516da8184aa323b90f3c6a0b",
+        "commit": "c33275e69d5eb664232ca7eb6427ac893263c4aa",
         "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "73c5c28cafd05008516da8184aa323b90f3c6a0b",
+        "commit": "c33275e69d5eb664232ca7eb6427ac893263c4aa",
         "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       },
       {
-        "commit": "73c5c28cafd05008516da8184aa323b90f3c6a0b",
+        "commit": "c33275e69d5eb664232ca7eb6427ac893263c4aa",
         "dirty": true,
         "url": "git@github.com:tmwnd/automatic_music_transcription.git"
       }
@@ -159,22 +159,11 @@
       ],
       [
         "train_reduced.py",
-        "_sources/train_reduced_c6542b04116f501c545dd269a1cf2d08.py"
+        "_sources/train_reduced_4ed977655d73a487941238c701242219.py"
       ]
     ]
   },
-  "fail_trace": [
-    "Traceback (most recent call last):\n",
-    "  File \"/home/users/twende/miniconda3/envs/music-transcription-frozen/lib/python3.8/site-packages/sacred/config/captured_function.py\", line 42, in captured_function\n    result = wrapped(*args, **kwargs)\n",
-    "  File \"train_reduced.py\", line 264, in train\n    for batch in loader:\n",
-    "  File \"/home/users/twende/miniconda3/envs/music-transcription-frozen/lib/python3.8/site-packages/torch/utils/data/dataloader.py\", line 630, in __next__\n    data = self._next_data()\n",
-    "  File \"/home/users/twende/miniconda3/envs/music-transcription-frozen/lib/python3.8/site-packages/torch/utils/data/dataloader.py\", line 673, in _next_data\n    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration\n",
-    "  File \"/home/users/twende/miniconda3/envs/music-transcription-frozen/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py\", line 52, in fetch\n    data = [self.dataset[idx] for idx in possibly_batched_index]\n",
-    "  File \"/home/users/twende/miniconda3/envs/music-transcription-frozen/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py\", line 52, in <listcomp>\n    data = [self.dataset[idx] for idx in possibly_batched_index]\n",
-    "  File \"/home/users/twende/dev/masterarbeit/automatic_music_transcription/model/dataset.py\", line 90, in __getitem__\n    result['audio'] = data['audio'][begin:end].to(self.device)\n",
-    "RuntimeError: CUDA error: device-side assert triggered\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n\n"
-  ],
-  "heartbeat": "2025-08-21T16:25:34.906992",
+  "heartbeat": "2025-08-22T23:32:49.821864",
   "host": {
     "ENV": {},
     "cpu": "Intel(R) Xeon(R) Platinum 8168 CPU @ 2.70GHz",
@@ -249,7 +238,7 @@
   },
   "resources": [],
   "result": null,
-  "start_time": "2025-08-21T16:00:21.359909",
-  "status": "FAILED",
-  "stop_time": "2025-08-21T16:25:34.911933"
+  "start_time": "2025-08-22T21:00:49.074030",
+  "status": "COMPLETED",
+  "stop_time": "2025-08-22T23:32:49.818746"
 }
